@@ -18,7 +18,7 @@ class Linked {
         void dump_list();
 
     private:
-        Node<int> *head;
+        Node *head;
 };
 
 #endif
