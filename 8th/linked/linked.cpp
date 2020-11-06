@@ -46,7 +46,16 @@ Linked::~Linked() {
  *  @return none.
  **/
 void Linked::append_data(int data) {
-    // put your code here.
+    Node *node = head;
+
+    while (node->next != nullptr) {
+        node = node->next;  // 找最後一個節點
+    }
+
+    node->next = new Node();    // 新增一個節點到
+                                // Linked List 尾端
+    node->next->data = data;    // 設定 .data
+    node->next->next = nullptr; // 設定 .next
 } // Linked::append_data()
 
 /**
@@ -80,7 +89,20 @@ bool Linked::contain_data(int data) {
  *  @return none.
  **/
 void Linked::remove_data(int data) {
-    // put your code here.
+    Node *node = head;
+
+    while (node->next != nullptr) {
+        Node *dummy = node->next;   // 候選節點
+
+        if (dummy->data == data) {  // 找到了？
+            node->next = dummy->next;
+            delete dummy;   // 釋放記憶體
+
+            break;
+        }
+
+        node = node->next;
+    }
 } // Linked::remove_data()
 
 /**

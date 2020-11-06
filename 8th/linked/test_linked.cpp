@@ -8,7 +8,7 @@
 /**
  *  錯誤訊息函式。
  *
- *  @param  err:    要印出的錯誤訊息
+ *  @param  string: 要印出的錯誤訊息
  *  @return none.
  **/
 void TestLinked::error(const std::string err) {
